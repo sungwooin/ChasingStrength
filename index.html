@@ -1,146 +1,105 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ChasingStrength | Home</title>
-  <link rel="stylesheet" href="assets/css/main.css" />
-</head>
-<body>
-  <header>
-    <h1 class="site-title">ChasingStrength</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="workouts.html">Workouts</a></li>
-        <li><a href="nutrition.html">Nutrition</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>From Skinny to Strong</h2>
-    <p>This website is my journey, my knowledge, and a way to help others transform while earning some pocket money. Everything is budget-friendly — even for teenagers!</p>
-    <a href="coaching.html" class="btn">Get Started</a>
-  </section>
-
-  <section class="info">
-    <h2 class="section-heading">What is ChasingStrength?</h2>
-    <p>ChasingStrength is your go-to place for building strength, improving endurance, reshaping your body, and strengthening your mindset. Custom workouts, diet plans, and personal coaching — all designed by someone who was once in your shoes.</p>
-  </section>
-
-  <footer>
-    <p>© 2025 ChasingStrength | Built by Prince</p>
-  </footer>
-</body>
-</html>
-
-
-/* assets/css/main.css */
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
   background-color: #111;
   color: #fff;
 }
 
-header {
-  background-color: #1a1a1a;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.site-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #f97316;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: #f97316;
-}
-
 .hero {
-  background-color: #000;
   background-image: url('https://media-hosting.imagekit.io/a583c3a0e27e4e18/20250416_205220%5B1%5D.jpg?Expires=1839411618&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=1WGwwm8tyk4eG3glD3KFpltl4x1sOxX9MzRqpOO6QdZRtp15HZsj3~tJxW3Uan5oGT9RxBtmBdAzGhUaOM~TiSnOuh88j87nkxT1KrTDZgg66Z3CW7QhzeupBDPuK9Q4XH8grXaELGD9edks6YLEzPHVD8eo8Z~ezIn1gp~NwK1lOTX9Xdz4FBmKRoXJs10E43~OZf9~czJe7LRxrpT2xR1Zm9ve-oW3zVDdn~eCzRc2cH~~MuCypILz4es2ChzehEjmG1v-Yzdf8IWDLWw1Bg4-tqI2tdqhI~f3gJyF0yGU4qTFMpsIeZ6gva6bOcnwSQfox981~M-m0T6FmbNizA__');
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
-  text-align: center;
-  padding: 100px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.btn {
-  background-color: #f97316;
-  color: #fff;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background-color: #fb923c;
-}
-
-.section-heading {
-  font-size: 1.8rem;
-  font-weight: bold;
-  border-bottom: 2px solid #f97316;
-  padding-bottom: 8px;
-  margin-top: 50px;
   margin-bottom: 20px;
-  text-align: center;
 }
 
-.info {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-  font-size: 1.1rem;
+.cta-button {
+  background: #ff5722;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-footer {
-  background-color: #1a1a1a;
+.cta-button:hover {
+  background: #e64a19;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  border-bottom: 2px solid #ff5722;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  background: #222;
   padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 250px;
   text-align: center;
-  font-size: 0.9rem;
-  color: #aaa;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
 }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.card .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-top: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #888;
+}
+
