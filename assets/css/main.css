@@ -67,35 +67,15 @@ header nav ul li a.active {
 
 /* Hero Section */
 .hero {
-  background: url('https://media-hosting.imagekit.io/9bcd7d0d456f4c4e/20250416_205220[1].jpg?Expires=1839410802&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=vsQAKGkvFSj52MFhdQnoCwEu-p2hoBddjF10b1dgBroJGjVACG-tp3LJ4iGphK3rSQUOI33ISZlpc~FzbgDOl29qNBRy7ybfY4o7Vch~-9fa2dvkcBPkZpQXBH2C6QIxsmqMc73fAR5elRinHfX3f5L8w6nw9auQec3Vys56Ieb8zy~ZQYfBI7SuI68pbY7G7SeerrsBznGzr6HqAqvQgL2I~rB7mGvSjIpy~PX3aVoxe~O7UldK0SgY9awADu81ttnyNvf-bZf3cFe2zl4cpI2o4Wh-r3OtdxwfgP7vNUUn4yAtYIk3Po46LfO-pNUiiZlHa97lwDeWsfrRDHRDfQ__') no-repeat center center/cover;
+  background: url('https://media-hosting.imagekit.io/a583c3a0e27e4e18/20250416_205220%5B1%5D.jpg?Expires=1839411618&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=1WGwwm8tyk4eG3glD3KFpltl4x1sOxX9MzRqpOO6QdZRtp15HZsj3~tJxW3Uan5oGT9RxBtmBdAzGhUaOM~TiSnOuh88j87nkxT1KrTDZgg66Z3CW7QhzeupBDPuK9Q4XH8grXaELGD9edks6YLEzPHVD8eo8Z~ezIn1gp~NwK1lOTX9Xdz4FBmKRoXJs10E43~OZf9~czJe7LRxrpT2xR1Zm9ve-oW3zVDdn~eCzRc2cH~~MuCypILz4es2ChzehEjmG1v-Yzdf8IWDLWw1Bg4-tqI2tdqhI~f3gJyF0yGU4qTFMpsIeZ6gva6bOcnwSQfox981~M-m0T6FmbNizA__') no-repeat center center;
+  background-size: cover;
   color: white;
-  padding: 80px 0;
+  padding: 100px 20px;
   text-align: center;
-}
-
-.hero h2 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin-bottom: 30px;
-}
-
-.cta-btn {
-  background-color: #f5a623;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.cta-btn:hover {
-  background-color: #e49b19;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Section Headers */
@@ -104,13 +84,13 @@ header nav ul li a.active {
   font-weight: bold;
   border-bottom: 2px solid #333;
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 /* About Section */
 .about {
-  padding: 50px 0;
+  padding: 60px 0;
   background-color: #fff;
   text-align: center;
 }
@@ -118,17 +98,22 @@ header nav ul li a.active {
 .about p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Fitness Philosophy Section */
 .fitness-philosophy {
   background-color: #f9f9f9;
-  padding: 50px 0;
+  padding: 60px 0;
 }
 
 .fitness-philosophy ul {
   padding-left: 20px;
   text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .fitness-philosophy ul li {
@@ -138,12 +123,12 @@ header nav ul li a.active {
 
 /* Services Section */
 .services {
-  padding: 50px 0;
+  padding: 60px 0;
   background-color: #fff;
 }
 
 .service {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -159,17 +144,21 @@ header nav ul li a.active {
 .service p {
   font-size: 1rem;
   color: #666;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Benefits Section */
 .benefits {
-  padding: 50px 0;
+  padding: 60px 0;
   background-color: #f9f9f9;
 }
 
 .benefits ul {
   padding-left: 20px;
   text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .benefits ul li {
@@ -181,7 +170,7 @@ header nav ul li a.active {
 .call-to-action {
   background-color: #333;
   color: white;
-  padding: 50px 0;
+  padding: 60px 0;
   text-align: center;
 }
 
@@ -190,12 +179,26 @@ header nav ul li a.active {
   margin-bottom: 20px;
 }
 
+.cta-btn {
+  background-color: #f5a623;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cta-btn:hover {
+  background-color: #e49b19;
+}
+
 /* Footer Section */
 footer {
   background-color: #222;
   color: white;
   padding: 20px 0;
   text-align: center;
+  font-size: 0.9rem;
 }
 
 /* Media Queries for Responsiveness */
@@ -222,7 +225,7 @@ footer {
   }
 
   .services .service {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .section-header {
