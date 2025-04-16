@@ -1,184 +1,235 @@
-/* Reset */
-* {
+/* General Body and Text Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  background-color: #fdfdfd;
+  background-color: #f4f4f4;
   color: #333;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
 }
 
-/* Header */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Header Styles */
 header {
-  background: #0f0f0f;
+  background-color: #333;
   color: white;
   padding: 20px 0;
 }
 
-.logo a {
-  color: #ff6600;
-  text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 700;
+header .logo a {
+  font-size: 2rem;
+  color: #f5a623;
+  font-weight: bold;
 }
 
 header nav ul {
-  display: flex;
-  gap: 30px;
   list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 20px;
 }
 
 header nav ul li a {
   color: white;
-  text-decoration: none;
-  text-transform: uppercase;
+  font-size: 1.1rem;
   font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s;
 }
 
 header nav ul li a:hover,
 header nav ul li a.active {
-  color: #ff6600;
+  color: #f5a623;
 }
 
-/* Hero Sections */
-#hero {
-  background: url('../images/hero.jpg') center center/cover no-repeat;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Hero Section */
+.hero {
+  background: url('your-hero-image.jpg') no-repeat center center/cover;
   color: white;
+  padding: 80px 0;
   text-align: center;
-  padding: 0 20px;
 }
 
-.hero-content h2 {
+.hero h2 {
   font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  max-width: 600px;
-}
-
-.hero-small {
-  background: #111;
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.hero-small h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.hero-small p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* CTA Button */
-.cta-button {
-  background: #ff6600;
-  color: white;
-  padding: 12px 30px;
-  text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.cta-button:hover {
-  background: #e05600;
-}
-
-/* Sections */
-.section {
-  padding: 60px 20px;
-  background: #fff;
-}
-
-.section h3 {
-  font-size: 1.8rem;
   margin-bottom: 20px;
 }
 
-.section p,
-.section ul {
-  font-size: 1.1rem;
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
 }
 
-/* Feature Cards */
-.grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
+.cta-btn {
+  background-color: #f5a623;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
 }
 
-.feature {
-  flex: 1;
-  min-width: 250px;
-  padding: 20px;
-  background: #f7f7f7;
-  border-radius: 10px;
+.cta-btn:hover {
+  background-color: #e49b19;
+}
+
+/* Section Headers */
+.section-header {
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.feature h3,
-.feature h4 {
-  font-size: 1.4rem;
+/* About Section */
+.about {
+  padding: 50px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.about p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Fitness Philosophy Section */
+.fitness-philosophy {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.fitness-philosophy ul {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.fitness-philosophy ul li {
+  font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
-.feature a {
-  color: #ff6600;
-  text-decoration: none;
-  font-weight: 600;
+/* Services Section */
+.services {
+  padding: 50px 0;
+  background-color: #fff;
 }
 
-.feature a:hover {
-  text-decoration: underline;
-}
-
-/* Bullet List */
-.section ul {
-  margin-top: 15px;
-  list-style: none;
-}
-
-.section ul li {
-  margin: 8px 0;
-  padding-left: 1em;
-  position: relative;
-}
-
-.section ul li::before {
-  content: '👉';
-  position: absolute;
-  left: 0;
-}
-
-/* Footer */
-footer {
-  background: #111;
-  color: white;
+.service {
+  margin-bottom: 30px;
   text-align: center;
-  padding: 20px;
+}
+
+.service-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Benefits Section */
+.benefits {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.benefits ul {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.benefits ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Call to Action Section */
+.call-to-action {
+  background-color: #333;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.call-to-action p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Footer Section */
+footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .cta-btn {
+    padding: 10px 20px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  .services .service {
+    margin-bottom: 20px;
+  }
+
+  .section-header {
+    font-size: 1.5rem;
+  }
+
+  .call-to-action p {
+    font-size: 1rem;
+  }
 }
