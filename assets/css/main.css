@@ -1,25 +1,16 @@
-/* Reset and Base */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base styles */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0f0f0f;
-  color: #eaeaea;
-  line-height: 1.7;
-  font-size: 16px;
-}
-
-a {
-  color: #ff5722;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
 }
 
 /* Hero Section */
@@ -27,14 +18,14 @@ a:hover {
   background-image: url('https://media-hosting.imagekit.io/a583c3a0e27e4e18/20250416_205220%5B1%5D.jpg?Expires=1839411618&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=1WGwwm8tyk4eG3glD3KFpltl4x1sOxX9MzRqpOO6QdZRtp15HZsj3~tJxW3Uan5oGT9RxBtmBdAzGhUaOM~TiSnOuh88j87nkxT1KrTDZgg66Z3CW7QhzeupBDPuK9Q4XH8grXaELGD9edks6YLEzPHVD8eo8Z~ezIn1gp~NwK1lOTX9Xdz4FBmKRoXJs10E43~OZf9~czJe7LRxrpT2xR1Zm9ve-oW3zVDdn~eCzRc2cH~~MuCypILz4es2ChzehEjmG1v-Yzdf8IWDLWw1Bg4-tqI2tdqhI~f3gJyF0yGU4qTFMpsIeZ6gva6bOcnwSQfox981~M-m0T6FmbNizA__');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   text-align: center;
   padding: 40px 20px;
-  color: white;
   position: relative;
 }
 
@@ -48,90 +39,92 @@ a:hover {
   z-index: 0;
 }
 
-.hero h1, .hero p, .cta-button {
+.hero h1,
+.hero p,
+.cta-button {
   position: relative;
   z-index: 1;
 }
 
 .hero h1 {
   font-size: 3rem;
+  margin-bottom: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #fff;
 }
 
 .hero p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   max-width: 700px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  color: #ddd;
 }
 
 .cta-button {
-  padding: 12px 28px;
   background: #ff5722;
   color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
   border: none;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease;
   cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(255,87,34,0.4);
 }
 
 .cta-button:hover {
   background: #e64a19;
-  transform: scale(1.05);
 }
 
-/* Sections */
+/* Section styling */
 .section {
-  padding: 70px 20px;
-  max-width: 1100px;
+  padding: 60px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
 .section h2 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  border-left: 6px solid #ff5722;
+  font-size: 2rem;
+  border-left: 5px solid #ff5722;
   padding-left: 15px;
+  margin-bottom: 25px;
   color: #ffb199;
 }
 
 .section p {
-  font-size: 1.1rem;
   color: #ccc;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 
 /* Cards */
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
-  justify-content: space-between;
   margin-top: 40px;
 }
 
 .card {
-  background: #1b1b1b;
+  background-color: #1e1e1e;
+  border-radius: 10px;
   padding: 25px;
-  border-radius: 12px;
-  flex: 1 1 300px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  transition: all 0.3s ease;
+  width: 300px;
   text-align: center;
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  background: #232323;
+  background: #2a2a2a;
 }
 
 .card h3 {
-  color: #ff9800;
+  font-size: 1.4rem;
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  color: #ff9800;
 }
 
 .card p {
@@ -140,7 +133,7 @@ a:hover {
 }
 
 .card .price {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #4caf50;
   margin-top: 15px;
@@ -148,11 +141,11 @@ a:hover {
 
 /* Footer */
 .footer {
-  padding: 20px;
   text-align: center;
+  padding: 25px 15px;
   background: #000;
-  color: #777;
-  font-size: 0.9rem;
+  color: #888;
+  font-size: 0.95rem;
 }
 
 /* Responsive */
@@ -161,16 +154,17 @@ a:hover {
     font-size: 2.2rem;
   }
 
-  .card-container {
-    flex-direction: column;
-  }
-
-  .cta-button {
+  .hero p {
     font-size: 1rem;
-    padding: 10px 20px;
   }
 
   .section h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
+
