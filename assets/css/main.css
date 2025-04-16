@@ -1,238 +1,105 @@
-/* General Body and Text Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #111;
+  color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-/* Header Styles */
-header {
-  background-color: #333;
-  color: white;
-  padding: 20px 0;
-}
-
-header .logo a {
-  font-size: 2rem;
-  color: #f5a623;
-  font-weight: bold;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-header nav ul li {
-  margin: 0 20px;
-}
-
-header nav ul li a {
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-
-header nav ul li a:hover,
-header nav ul li a.active {
-  color: #f5a623;
-}
-
-/* Hero Section */
 .hero {
-  background: url('https://media-hosting.imagekit.io/a583c3a0e27e4e18/20250416_205220%5B1%5D.jpg?Expires=1839411618&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=1WGwwm8tyk4eG3glD3KFpltl4x1sOxX9MzRqpOO6QdZRtp15HZsj3~tJxW3Uan5oGT9RxBtmBdAzGhUaOM~TiSnOuh88j87nkxT1KrTDZgg66Z3CW7QhzeupBDPuK9Q4XH8grXaELGD9edks6YLEzPHVD8eo8Z~ezIn1gp~NwK1lOTX9Xdz4FBmKRoXJs10E43~OZf9~czJe7LRxrpT2xR1Zm9ve-oW3zVDdn~eCzRc2cH~~MuCypILz4es2ChzehEjmG1v-Yzdf8IWDLWw1Bg4-tqI2tdqhI~f3gJyF0yGU4qTFMpsIeZ6gva6bOcnwSQfox981~M-m0T6FmbNizA__') no-repeat center center;
+  background-image: url('https://media-hosting.imagekit.io/a583c3a0e27e4e18/20250416_205220%5B1%5D.jpg?Expires=1839411618&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=1WGwwm8tyk4eG3glD3KFpltl4x1sOxX9MzRqpOO6QdZRtp15HZsj3~tJxW3Uan5oGT9RxBtmBdAzGhUaOM~TiSnOuh88j87nkxT1KrTDZgg66Z3CW7QhzeupBDPuK9Q4XH8grXaELGD9edks6YLEzPHVD8eo8Z~ezIn1gp~NwK1lOTX9Xdz4FBmKRoXJs10E43~OZf9~czJe7LRxrpT2xR1Zm9ve-oW3zVDdn~eCzRc2cH~~MuCypILz4es2ChzehEjmG1v-Yzdf8IWDLWw1Bg4-tqI2tdqhI~f3gJyF0yGU4qTFMpsIeZ6gva6bOcnwSQfox981~M-m0T6FmbNizA__');
   background-size: cover;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
 }
 
-/* Section Headers */
-.section-header {
-  font-size: 2rem;
-  font-weight: bold;
-  border-bottom: 2px solid #333;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background: #ff5722;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: #e64a19;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  border-bottom: 2px solid #ff5722;
   padding-bottom: 10px;
   margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 250px;
   text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
 }
 
-/* About Section */
-.about {
-  padding: 60px 0;
-  background-color: #fff;
-  text-align: center;
+.card:hover {
+  transform: scale(1.05);
 }
 
-.about p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Fitness Philosophy Section */
-.fitness-philosophy {
-  background-color: #f9f9f9;
-  padding: 60px 0;
-}
-
-.fitness-philosophy ul {
-  padding-left: 20px;
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.fitness-philosophy ul li {
-  font-size: 1.2rem;
+.card h3 {
+  color: #ff9800;
   margin-bottom: 10px;
 }
 
-/* Services Section */
-.services {
-  padding: 60px 0;
-  background-color: #fff;
-}
-
-.service {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.service-header {
+.card .price {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+  color: #4caf50;
+  margin-top: 10px;
 }
 
-.service p {
-  font-size: 1rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* Benefits Section */
-.benefits {
-  padding: 60px 0;
-  background-color: #f9f9f9;
-}
-
-.benefits ul {
-  padding-left: 20px;
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.benefits ul li {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-/* Call to Action Section */
-.call-to-action {
-  background-color: #333;
-  color: white;
-  padding: 60px 0;
+.footer {
   text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #888;
 }
 
-.call-to-action p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.cta-btn {
-  background-color: #f5a623;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.cta-btn:hover {
-  background-color: #e49b19;
-}
-
-/* Footer Section */
-footer {
-  background-color: #222;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .cta-btn {
-    padding: 10px 20px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header nav ul li {
-    margin: 10px 0;
-  }
-
-  .services .service {
-    margin-bottom: 30px;
-  }
-
-  .section-header {
-    font-size: 1.5rem;
-  }
-
-  .call-to-action p {
-    font-size: 1rem;
-  }
-}
