@@ -2,74 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services | ChasingStrength 💪</title>
-  <link rel="stylesheet" href="assets/css/main.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500&display=swap" rel="stylesheet"> <!-- Font -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script> <!-- AOS for animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | ChasingStrength 🏋️‍♂️</title>
+  <link rel="stylesheet" href="assets/css/main.css" />  
 </head>
 <body>
-  <header class="sticky-header">
+
+  <!-- 🔝 Navigation -->
+  <header class="navbar">
     <div class="container">
-      <h1 class="logo"><a href="index.html">ChasingStrength</a></h1>
+      <h1 class="logo">ChasingStrength 💪</h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home 🏠</a></li>
+          <li><a href="index.html" class="active">Home 🏠</a></li>
           <li><a href="about.html">About 👤</a></li>
-          <li><a href="workouts.html">Workouts 🏋️‍♂️</a></li>
-          <li><a href="nutrition.html">Nutrition 🍎</a></li>
-          <li><a href="coaching.html">Coaching 🧑‍🏫</a></li>
+          <li><a href="workouts.html">Workouts 🏃</a></li>
+          <li><a href="nutrition.html">Nutrition 🥗</a></li>
+          <li><a href="coaching.html">Coaching 🧠</a></li>
           <li><a href="contact.html">Contact 📞</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="services" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-header">Our Services 💥</h2>
-      <p>At ChasingStrength, we offer tailored services designed to meet your individual fitness goals. Whether you're just starting or you're a seasoned athlete, we have something for everyone. 🎯</p>
+  <!-- 🛠️ Services Section -->
+  <section class="services container">
+    <h2 class="section-title">Our Services 🏋️‍♀️</h2>
+    <p>We provide personalized fitness solutions tailored to your goals. Whether you're looking to build strength, lose fat, or just improve your overall health, we've got you covered!</p>
 
-      <div class="services-list">
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="service-title">Personal Coaching 🏋️‍♀️</h3>
-          <p>Get one-on-one coaching from me! I'll create a customized fitness plan based on your goals and provide ongoing support and motivation. 🔥</p>
-          <p><strong>Price:</strong> ₹1000/month</p>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="service-title">Workout Plans 🏃‍♂️</h3>
-          <p>Receive a personalized workout plan designed to fit your specific needs and fitness level. Whether you're looking to build strength, lose weight, or improve endurance, we’ve got you covered! 🏅</p>
-          <p><strong>Price:</strong> ₹500/plan</p>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="service-title">Nutrition Coaching 🍽️</h3>
-          <p>Transform your diet and fuel your body with the right nutrients! I’ll guide you in creating a meal plan that helps you achieve your fitness goals. 🍏</p>
-          <p><strong>Price:</strong> ₹700/month</p>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-          <h3 class="service-title">Fitness Consultation 💡</h3>
-          <p>Not sure where to start? Book a consultation to discuss your goals, challenges, and how to get started on your fitness journey! 🌱</p>
-          <p><strong>Price:</strong> ₹300/consultation</p>
-        </div>
+    <!-- Service Cards -->
+    <div class="cards">
+      <div class="card">
+        <h3>💪 Custom Workouts</h3>
+        <p>Our expert-designed programs are tailored to your needs—strength, endurance, or agility. Train smarter, not harder!</p>
       </div>
+      <div class="card">
+        <h3>🥗 Nutrition Coaching</h3>
+        <p>Fuel your fitness journey with personalized meal plans, nutrition tips, and tracking tools to optimize your results.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 1-on-1 Coaching</h3>
+        <p>Get expert coaching with personalized attention, motivation, and accountability to ensure your goals are met.</p>
+      </div>
+    </div>
 
-      <p>All services are designed to help you unlock your full potential. 💪 No matter what your fitness goals are, ChasingStrength is here to help you every step of the way! 🚀</p>
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <h3>Ready to Transform? 🌟</h3>
+      <p>Get started today with a personalized plan designed just for you!</p>
+      <a href="coaching.html" class="cta-button">Get Coaching Now 🔥</a>
     </div>
   </section>
 
-  <footer style="background-color: #222; color: #fff;">
+  <!-- 📞 Footer -->
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 ChasingStrength — Built by Prince. All rights reserved. 🌱</p>
+      <p>Made with 💙 by Prince • © 2025 ChasingStrength</p>
+      <p><a href="mailto:chasingstrengthh@gmail.com">📧 chasingstrengthh@gmail.com</a></p>
     </div>
   </footer>
 
-  <script src="assets/js/script.js"></script> <!-- Ensure this is linked for interactive features -->
-  <script>
-    AOS.init({ once: true, duration: 1000 });
-  </script> <!-- AOS initialization -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
+
