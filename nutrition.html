@@ -103,6 +103,51 @@
     </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
+  <script>
+    // Calorie Calculator JavaScript Functionality
+    document.getElementById("calorieForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const age = parseInt(document.getElementById("age").value);
+      const gender = document.getElementById("gender").value;
+      const activity = document.getElementById("activity").value;
+
+      // Calculate BMR (Basal Metabolic Rate) using the Mifflin-St Jeor Equation
+      let bmr;
+
+      if (gender === "male") {
+        bmr = 10 * age + 6.25 * 175 - 5 * age + 5;  // Weight is set as 175 cm as an example
+      } else {
+        bmr = 10 * age + 6.25 * 160 - 5 * age - 161; // Weight is set as 160 cm as an example
+      }
+
+      // Adjust BMR for activity level
+      let calorieNeeds;
+      switch (activity) {
+        case "sedentary":
+          calorieNeeds = bmr * 1.2;
+          break;
+        case "light":
+          calorieNeeds = bmr * 1.375;
+          break;
+        case "moderate":
+          calorieNeeds = bmr * 1.55;
+          break;
+        case "active":
+          calorieNeeds = bmr * 1.725;
+          break;
+        case "extreme":
+          calorieNeeds = bmr * 1.9;
+          break;
+      }
+
+      // Show the result
+      document.getElementById("calorieResult").style.display = "block";
+      document.getElementById("calorieValue").innerText = Math.round(calorieNeeds);
+    });
+  </script>
+
 </body>
 </html>
+
