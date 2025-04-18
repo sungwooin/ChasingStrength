@@ -1,330 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nutrition & Calorie Calculator - ChasingStrength</title>
+  <title>Nutrition - ChasingStrength 🥗</title>
   <link rel="stylesheet" href="assets/css/main.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-    }
-
-    /* Navigation Styles */
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #333;
-      padding: 10px;
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #4CAF50;
-    }
-
-    nav a.active {
-      background-color: #4CAF50;
-    }
-
-    main {
-      margin-top: 30px;
-      padding: 20px;
-    }
-
-    /* Form and Results Styles */
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    label, input, select {
-      width: 100%;
-      margin-bottom: 15px;
-    }
-
-    label {
-      font-size: 1rem;
-    }
-
-    input, select {
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      width: 100%;
-      border: none;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    #results {
-      text-align: center;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: 0 auto;
-      display: none;
-    }
-
-    canvas {
-      margin-top: 20px;
-    }
-
-    .back-button {
-      background-color: #007BFF;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      margin-top: 20px;
-      display: inline-block;
-    }
-
-    .back-button:hover {
-      background-color: #0056b3;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 50px;
-    }
-
-    footer a {
-      color: #4CAF50;
-      text-decoration: none;
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-      }
-
-      nav {
-        flex-direction: column;
-      }
-
-      nav a {
-        padding: 10px 15px;
-      }
-    }
-
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Segoe+UI&display=swap" rel="stylesheet" />
 </head>
+
 <body>
 
-  <!-- Sticky Navigation Bar -->
-  <header>
-    <h1>ChasingStrength 🏋️‍♂️</h1>
-    <h2>Nutrition & Calorie Calculator</h2>
+  <!-- 🔝 Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">ChasingStrength 💪</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home 🏠</a></li>
+          <li><a href="about.html">About 👤</a></li>
+          <li><a href="workouts.html">Workouts 🏃</a></li>
+          <li><a href="nutrition.html" class="active">Nutrition 🥗</a></li>
+          <li><a href="coaching.html">Coaching 🧠</a></li>
+          <li><a href="contact.html">Contact 📞</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="nutrition.html">Nutrition</a>
-    <a href="workouts.html">Workouts</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- 🌄 Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Fuel Your Body Right 🥑</h2>
+      <p>Nutrition is the foundation of strength! Learn how to optimize your diet and supplement your fitness journey.</p>
+      <a href="coaching.html" class="cta-button">Get Coaching Now 🔥</a>
+    </div>
+    <img src="assets/images/hero-image.jpg" alt="ChasingStrength Hero Image" class="hero-image" />
+  </section>
 
-  <main>
-    <section>
-      <form id="calculator-form">
-        <label for="weight">Weight (kg):</label>
-        <input type="number" id="weight" required />
-
-        <label for="height">Height (cm):</label>
-        <input type="number" id="height" required />
-
-        <label for="age">Age (years):</label>
-        <input type="number" id="age" required />
-
-        <label for="gender">Gender:</label>
-        <select id="gender" required>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-
-        <label for="activity">Activity Level:</label>
-        <select id="activity" required>
-          <option value="1.2">Sedentary (little or no exercise)</option>
-          <option value="1.375">Lightly active</option>
-          <option value="1.55">Moderately active</option>
-          <option value="1.725">Very active</option>
-          <option value="1.9">Super active</option>
-        </select>
-
-        <label for="goal">Goal:</label>
-        <select id="goal" required>
-          <option value="maintain">Maintain weight</option>
-          <option value="lose">Lose weight</option>
-          <option value="gain">Gain muscle</option>
-        </select>
-
-        <button type="button" id="calculate-btn">Calculate</button>
-      </form>
-
-      <div id="results">
-        <h3>Your Results:</h3>
-        <p id="bmi-result"></p>
-        <p id="calories-result"></p>
-        <p id="macros-result"></p>
-        <p id="fiber-result"></p>
-
-        <canvas id="macronutrient-chart"></canvas>
-
-        <a href="index.html" class="back-button">Back to Home</a>
+  <!-- 📌 Features -->
+  <section class="features container">
+    <h2 class="section-title">What You’ll Find Here 👇</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>💥 Custom Meal Plans</h3>
+        <p>Tailored nutrition plans to fuel your transformation based on your goals.</p>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <h3>🍎 Smart Calorie Calculator</h3>
+        <p>Use our calorie calculator to find your ideal calorie intake and track progress.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 Nutritional Coaching</h3>
+        <p>Personalized advice and support to help you stick to your diet and achieve results.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 ChasingStrength. All rights reserved. <br> <a href="mailto:chasingstrengthh@gmail.com">Contact us</a></p>
+  <!-- 📊 Tools -->
+  <section class="tools container">
+    <h2 class="section-title">Free Fitness Tools 🧮</h2>
+    <ul class="tool-links">
+      <li><a href="nutrition.html#calorie-calculator">🧾 Calorie Calculator</a></li>
+      <li><a href="workouts.html#progress-tracker">📈 Progress Tracker</a></li>
+      <li><a href="faq.html">❓ FAQ Page</a></li>
+    </ul>
+  </section>
+
+  <!-- 📣 CTA Banner -->
+  <section class="cta-banner">
+    <h2>Limited Coaching Spots Available! ⏳</h2>
+    <p>Join now & get exclusive early-bird benefits.</p>
+    <a href="coaching.html" class="cta-button">Start Your Journey 🏁</a>
+  </section>
+
+  <!-- 📞 Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Made with 💙 by Prince • © 2025 ChasingStrength</p>
+      <p><a href="mailto:chasingstrengthh@gmail.com">📧 chasingstrengthh@gmail.com</a></p>
+    </div>
   </footer>
 
-  <script>
-    // Add active class to current page link
-    const links = document.querySelectorAll('nav a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        links.forEach(link => link.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-
-    document.getElementById('calculate-btn').addEventListener('click', function() {
-      const weight = parseFloat(document.getElementById('weight').value);
-      const height = parseFloat(document.getElementById('height').value) / 100; // Convert to meters
-      const age = parseInt(document.getElementById('age').value);
-      const gender = document.getElementById('gender').value;
-      const activityLevel = parseFloat(document.getElementById('activity').value);
-      const goal = document.getElementById('goal').value;
-
-      if (!weight || !height || !age || !gender || !activityLevel || !goal) {
-        alert('Please fill in all fields');
-        return;
-      }
-
-      let bmr;
-      if (gender === 'male') {
-        bmr = 10 * weight + 6.25 * (height * 100) - 5 * age + 5; 
-      } else {
-        bmr = 10 * weight + 6.25 * (height * 100) - 5 * age - 161;
-      }
-
-      const tdee = bmr * activityLevel;
-
-      let adjustedCalories;
-      if (goal === 'lose') {
-        adjustedCalories = tdee - 500;
-      } else if (goal === 'gain') {
-        adjustedCalories = tdee + 500;
-      } else {
-        adjustedCalories = tdee;
-      }
-
-      const protein = weight * 2.2;
-      const fat = adjustedCalories * 0.25 / 9;
-      const carbs = (adjustedCalories - (protein * 4 + fat * 9)) / 4;
-
-      const fiber = 30;
-
-      const bmi = weight / (height * height);
-      let bmiCategory = '';
-      if (bmi < 18.5) {
-        bmiCategory = 'Underweight';
-      } else if (bmi >= 18.5 && bmi < 24.9) {
-        bmiCategory = 'Normal weight';
-      } else if (bmi >= 25 && bmi < 29.9) {
-        bmiCategory = 'Overweight';
-      } else {
-        bmiCategory = 'Obesity';
-      }
-
-      document.getElementById('bmi-result').innerText = `Your BMI: ${bmi.toFixed(2)} (${bmiCategory})`;
-      document.getElementById('calories-result').innerText = `Daily Calories: ${adjustedCalories.toFixed(0)} kcal`;
-      document.getElementById('macros-result').innerText = `Protein: ${protein.toFixed(0)}g | Fat: ${fat.toFixed(0)}g | Carbs: ${carbs.toFixed(0)}g`;
-      document.getElementById('fiber-result').innerText = `Recommended Fiber: ${fiber}g`;
-
-      document.getElementById('results').style.display = 'block';
-
-      const ctx = document.getElementById('macronutrient-chart').getContext('2d');
-      const macronutrientChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-          labels: ['Protein', 'Fat', 'Carbs', 'Fiber'],
-          datasets: [{
-            data: [protein, fat, carbs, fiber],
-            backgroundColor: ['#FF5733', '#C70039', '#900C3F', '#DAF7A6'],
-          }]
-        }
-      });
-    });
-  </script>
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>
+
 
 
 
