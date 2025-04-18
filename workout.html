@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workouts - ChasingStrength 🏋️‍♂️</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- 🔝 Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">ChasingStrength 💪</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home 🏠</a></li>
+          <li><a href="about.html">About 👤</a></li>
+          <li><a href="workouts.html" class="active">Workouts 🏃</a></li>
+          <li><a href="nutrition.html">Nutrition 🥗</a></li>
+          <li><a href="coaching.html">Coaching 🧠</a></li>
+          <li><a href="contact.html">Contact 📞</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🌄 Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Track Your Fitness Progress 🏋️‍♂️</h2>
+      <p>Monitor your improvements over time and stay motivated on your fitness journey.</p>
+    </div>
+  </section>
+
+  <!-- 📌 Progress Tracker -->
+  <section class="progress-tracker container">
+    <h2 class="section-title">Track Your Fitness Progress</h2>
+
+    <!-- Progress Entry Form -->
+    <form id="progress-form">
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" placeholder="Enter your weight" required />
+
+      <label for="body-fat">Body Fat Percentage (%):</label>
+      <input type="number" id="body-fat" placeholder="Enter your body fat percentage" required />
+
+      <button type="submit">Save Progress</button>
+    </form>
+
+    <h3>Progress Chart</h3>
+    <canvas id="progressChart" width="400" height="200"></canvas>
+  </section>
+
+  <!-- 📣 CTA Banner -->
+  <section class="cta-banner">
+    <h2>Start Your Journey 🏁</h2>
+    <p>Track your progress and achieve your fitness goals with us!</p>
+    <a href="coaching.html" class="cta-button">Get Coaching Now 🔥</a>
+  </section>
+
+  <!-- 📞 Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Made with 💙 by Prince • © 2025 ChasingStrength</p>
+      <p><a href="mailto:chasingstrengthh@gmail.com">📧 chasingstrengthh@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize progress data in localStorage if not available
+    if (!localStorage.getItem('progressData')) {
+      localStorage.setItem('progressData', JSON.stringify([]));
+    }
+
+    // Fetch progress from localStorage and display on the chart
+    function fetchProgress() {
+      const progressData = JSON.parse(localStorage.getItem('progressData'));
+
+      const dates = progressData.map(entry => entry.date);
+      const weights = progressData.map(entry => entry.weight);
+      const bodyFat = progressData.map(entry => entry.bodyFat);
+
+      // Update chart with the fetched data
+      const ctx = document.getElementById('progressChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: dates,
+          datasets: [
+            {
+              label: 'Weight (kg)',
+              data: weights,
+              borderColor: 'rgba(75, 192, 192, 1)',
+              fill: false,
+            },
+            {
+              label: 'Body Fat (%)',
+              data: bodyFat,
+              borderColor: 'rgba(153, 102, 255, 1)',
+              fill: false,
+            }
+          ]
+        }
+      });
+    }
+
+    // Save progress to localStorage
+    document.getElementById('progress-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const date = document.getElementById('date').value;
+      const weight = document.getElementById('weight').value;
+      const bodyFat = document.getElementById('body-fat').value;
+
+      if (date && weight && bodyFat) {
+        // Get existing progress data from localStorage
+        const progressData = JSON.parse(localStorage.getItem('progressData'));
+
+        // Save the new progress
+        progressData.push({ date, weight, bodyFat });
+
+        // Update localStorage with the new progress
+        localStorage.setItem('progressData', JSON.stringify(progressData));
+
+        // Refresh the chart
+        fetchProgress();
+
+        // Clear the form fields
+        document.getElementById('progress-form').reset();
+      } else {
+        alert('Please fill out all fields.');
+      }
+    });
+
+    // Initial fetch of progress data
+    fetchProgress();
+  </script>
+
+</body>
+</html>
