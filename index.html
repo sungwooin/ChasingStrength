@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ChasingStrength | Transform Your Body</title>
   <link rel="stylesheet" href="assets/css/main.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500&display=swap" rel="stylesheet"> <!-- Font -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script> <!-- AOS for animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS styles -->
 </head>
 <body>
-  <header>
+  <header class="sticky-header">
     <div class="container">
       <h1 class="logo"><a href="index.html">ChasingStrength</a></h1>
       <nav>
@@ -23,15 +26,15 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
+  <section class="hero" style="background-image: url('assets/images/hero-bg.jpg'); background-size: cover; background-position: center;">
+    <div class="container hero-content">
       <h2 class="headline">Transform Your Body, Transform Your Life</h2>
       <p>Start your fitness journey today. From being skinny and weak, I transformed myself into a strong and confident individual. You can do the same!</p>
       <a href="coaching.html" class="cta-btn">Get Started</a>
     </div>
   </section>
 
-  <section class="about">
+  <section class="about" data-aos="fade-up">
     <div class="container">
       <h2 class="section-header">My Journey</h2>
       <p>When I was younger, I was skinny and weak. I struggled with building muscle, gaining strength, and feeling confident about my body. But one day, I decided to take control of my life. I started working out, learning about nutrition, and improving my mindset. It wasn’t easy, but it was worth it. Now, I want to help you achieve the same results!</p>
@@ -39,7 +42,7 @@
     </div>
   </section>
 
-  <section class="fitness-philosophy">
+  <section class="fitness-philosophy" style="background-color: #f4f4f4;" data-aos="fade-up">
     <div class="container">
       <h2 class="section-header">My Fitness Philosophy</h2>
       <p>Fitness isn’t just about lifting heavy weights or eating chicken and broccoli. It’s about a holistic approach — training your body, fueling it properly, and adopting the right mindset. At ChasingStrength, we focus on:</p>
@@ -52,7 +55,7 @@
     </div>
   </section>
 
-  <section class="benefits">
+  <section class="benefits" data-aos="fade-up">
     <div class="container">
       <h2 class="section-header">Why You Should Start Your Fitness Journey</h2>
       <p>Fitness has a wide range of benefits that extend far beyond just looking good. Here are a few reasons why you should consider making fitness a priority in your life:</p>
@@ -65,7 +68,7 @@
     </div>
   </section>
 
-  <section class="services">
+  <section class="services" data-aos="fade-up">
     <div class="container">
       <h2 class="section-header">What We Offer</h2>
       <div class="service">
@@ -83,7 +86,7 @@
     </div>
   </section>
 
-  <section class="call-to-action">
+  <section class="call-to-action" style="background-color: #333; color: white;" data-aos="fade-up">
     <div class="container">
       <h2 class="section-header">Ready to Start Your Transformation?</h2>
       <p>Join the hundreds of people who have transformed their bodies and their lives through ChasingStrength. My coaching plans are affordable for everyone, even teenagers and students. Fitness is not about money; it's about mindset and dedication!</p>
@@ -91,10 +94,16 @@
     </div>
   </section>
 
-  <footer>
+  <footer style="background-color: #222; color: #fff;">
     <div class="container">
       <p>&copy; 2025 ChasingStrength — Built by Prince. All rights reserved.</p>
     </div>
   </footer>
+  
+  <script src="assets/js/main.js"></script> <!-- Ensure this is linked for interactive features -->
+  <script>
+    AOS.init({ once: true, duration: 1000 });
+  </script> <!-- AOS initialization -->
 </body>
 </html>
+
