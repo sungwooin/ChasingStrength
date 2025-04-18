@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workouts - ChasingStrength 🏋️‍♂️</title>
+  <title>Workouts | ChasingStrength 💪</title>
   <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Segoe+UI&display=swap" rel="stylesheet" />
+  <!-- Include Chart.js Library -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <!-- 🔝 Navigation -->
+  <!-- 🔝 Navbar -->
   <header class="navbar">
     <div class="container">
       <h1 class="logo">ChasingStrength 💪</h1>
@@ -17,7 +21,7 @@
         <ul>
           <li><a href="index.html">Home 🏠</a></li>
           <li><a href="about.html">About 👤</a></li>
-          <li><a href="workouts.html" class="active">Workouts 🏃</a></li>
+          <li><a href="workouts.html" class="active">Workouts 🏋️‍♂️</a></li>
           <li><a href="nutrition.html">Nutrition 🥗</a></li>
           <li><a href="coaching.html">Coaching 🧠</a></li>
           <li><a href="contact.html">Contact 📞</a></li>
@@ -26,41 +30,93 @@
     </div>
   </header>
 
-  <!-- 🌄 Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Track Your Fitness Progress 🏋️‍♂️</h2>
-      <p>Monitor your improvements over time and stay motivated on your fitness journey.</p>
+  <!-- 🏋️‍♂️ Workouts Section -->
+  <section class="workouts">
+    <div class="container">
+      <h2 class="section-title">My Workout Programs 💪</h2>
+      <p>Whether you're aiming to build strength, endurance, or agility, I've got a workout plan tailored for you. Let’s work together to crush your goals! 🔥</p>
+
+      <div class="workout-categories">
+        <!-- Workout Categories -->
+        <div class="category">
+          <h3 class="category-title">Strength Training 💥</h3>
+          <p>This program is focused on building raw strength with compound movements like squats, deadlifts, and bench press. It’s all about pushing your limits! 🚀</p>
+          <a href="#strength" class="btn">Start Now</a>
+        </div>
+        <div class="category">
+          <h3 class="category-title">Endurance Training 🏃‍♂️</h3>
+          <p>Designed for those who want to improve stamina, agility, and cardiovascular health. Includes running, circuit training, and bodyweight exercises. 🏃‍♀️</p>
+          <a href="#endurance" class="btn">Start Now</a>
+        </div>
+        <div class="category">
+          <h3 class="category-title">Bodyweight Workouts 🤸‍♂️</h3>
+          <p>No equipment? No problem! This program uses just your body weight to build strength, flexibility, and control. Perfect for home workouts! 🏡</p>
+          <a href="#bodyweight" class="btn">Start Now</a>
+        </div>
+      </div>
+
+      <!-- 🏆 Workout Plans for All Levels -->
+      <div class="plans">
+        <h3 class="subsection-title">Workout Plans for All Levels 🌟</h3>
+        <!-- Workout Plan Content -->
+        <div class="plan">
+          <h4>Beginner Plan 🧗‍♂️</h4>
+          <p>This plan is designed for those just starting their fitness journey. It includes basic exercises to build a solid foundation.</p>
+          <a href="#beginner" class="btn">Get Started</a>
+        </div>
+        <div class="plan">
+          <h4>Intermediate Plan 💪</h4>
+          <p>If you're past the beginner phase and want to step it up, this plan will challenge you with more complex movements.</p>
+          <a href="#intermediate" class="btn">Get Started</a>
+        </div>
+        <div class="plan">
+          <h4>Advanced Plan 🏆</h4>
+          <p>For the seasoned lifters who are looking for high-intensity workouts to push their limits and maximize gains.</p>
+          <a href="#advanced" class="btn">Get Started</a>
+        </div>
+      </div>
+
+      <!-- 🏋️‍♂️ Progress Tracking -->
+      <div class="progress-section">
+        <h3 class="subsection-title">Track Your Progress 📊</h3>
+        <p>Keep track of your progress by logging your weights, reps, and sets. You can visualize your journey here! 💪</p>
+        <canvas id="progressChart"></canvas> <!-- Canvas for chart -->
+      </div>
+
+      <script>
+        // Example data for the progress chart
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        const progressChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'], // Labels for x-axis (e.g., time)
+            datasets: [{
+              label: 'Weight (kg)', // Label for the dataset
+              data: [52, 55, 57, 58, 60], // Data points for the chart (e.g., body weight over time)
+              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderWidth: 2,
+              fill: true,
+            }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+
+      <!-- 🏋️‍♂️ Custom Workout Plan -->
+      <div class="custom-plan">
+        <h3 class="subsection-title">Need a Custom Plan? 🤔</h3>
+        <p>If none of the above plans fit your needs, feel free to reach out! I can create a custom workout plan just for you, based on your goals, fitness level, and preferences. Let’s work together to build the perfect plan! 💥</p>
+        <a href="contact.html" class="btn">Get Your Custom Plan</a>
+      </div>
     </div>
-  </section>
-
-  <!-- 📌 Progress Tracker -->
-  <section class="progress-tracker container">
-    <h2 class="section-title">Track Your Fitness Progress</h2>
-
-    <!-- Progress Entry Form -->
-    <form id="progress-form">
-      <label for="date">Date:</label>
-      <input type="date" id="date" required />
-
-      <label for="weight">Weight (kg):</label>
-      <input type="number" id="weight" placeholder="Enter your weight" required />
-
-      <label for="body-fat">Body Fat Percentage (%):</label>
-      <input type="number" id="body-fat" placeholder="Enter your body fat percentage" required />
-
-      <button type="submit">Save Progress</button>
-    </form>
-
-    <h3>Progress Chart</h3>
-    <canvas id="progressChart" width="400" height="200"></canvas>
-  </section>
-
-  <!-- 📣 CTA Banner -->
-  <section class="cta-banner">
-    <h2>Start Your Journey 🏁</h2>
-    <p>Track your progress and achieve your fitness goals with us!</p>
-    <a href="coaching.html" class="cta-button">Get Coaching Now 🔥</a>
   </section>
 
   <!-- 📞 Footer -->
@@ -71,75 +127,6 @@
     </div>
   </footer>
 
-  <script>
-    // Initialize progress data in localStorage if not available
-    if (!localStorage.getItem('progressData')) {
-      localStorage.setItem('progressData', JSON.stringify([]));
-    }
-
-    // Fetch progress from localStorage and display on the chart
-    function fetchProgress() {
-      const progressData = JSON.parse(localStorage.getItem('progressData'));
-
-      const dates = progressData.map(entry => entry.date);
-      const weights = progressData.map(entry => entry.weight);
-      const bodyFat = progressData.map(entry => entry.bodyFat);
-
-      // Update chart with the fetched data
-      const ctx = document.getElementById('progressChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: dates,
-          datasets: [
-            {
-              label: 'Weight (kg)',
-              data: weights,
-              borderColor: 'rgba(75, 192, 192, 1)',
-              fill: false,
-            },
-            {
-              label: 'Body Fat (%)',
-              data: bodyFat,
-              borderColor: 'rgba(153, 102, 255, 1)',
-              fill: false,
-            }
-          ]
-        }
-      });
-    }
-
-    // Save progress to localStorage
-    document.getElementById('progress-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      const date = document.getElementById('date').value;
-      const weight = document.getElementById('weight').value;
-      const bodyFat = document.getElementById('body-fat').value;
-
-      if (date && weight && bodyFat) {
-        // Get existing progress data from localStorage
-        const progressData = JSON.parse(localStorage.getItem('progressData'));
-
-        // Save the new progress
-        progressData.push({ date, weight, bodyFat });
-
-        // Update localStorage with the new progress
-        localStorage.setItem('progressData', JSON.stringify(progressData));
-
-        // Refresh the chart
-        fetchProgress();
-
-        // Clear the form fields
-        document.getElementById('progress-form').reset();
-      } else {
-        alert('Please fill out all fields.');
-      }
-    });
-
-    // Initial fetch of progress data
-    fetchProgress();
-  </script>
-
 </body>
 </html>
+
