@@ -5,32 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nutrition & Calorie Calculator - ChasingStrength</title>
   <link rel="stylesheet" href="assets/css/main.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+    /* Global Styles */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f4f9;
-      padding: 20px;
       color: #333;
+      margin: 0;
+      padding: 0;
     }
 
     header {
+      background: #4CAF50;
+      color: white;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
       text-align: center;
-      padding: 20px;
-      margin-bottom: 30px;
     }
 
     h1 {
       font-size: 2.5rem;
-      color: #2d2d2d;
     }
 
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #444;
+      font-size: 1.5rem;
     }
 
+    /* Navigation Styles */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #4CAF50;
+    }
+
+    nav a.active {
+      background-color: #4CAF50;
+    }
+
+    main {
+      margin-top: 30px;
+      padding: 20px;
+    }
+
+    /* Form and Results Styles */
     form {
       display: flex;
       flex-direction: column;
@@ -44,30 +80,31 @@
       margin: 0 auto;
     }
 
+    label, input, select {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
     label {
       font-size: 1rem;
-      margin-bottom: 5px;
-      color: #444;
     }
 
     input, select {
-      margin-bottom: 15px;
       padding: 10px;
-      width: 100%;
       font-size: 1rem;
       border: 1px solid #ddd;
       border-radius: 6px;
     }
 
     button {
-      padding: 12px 20px;
       background-color: #4CAF50;
       color: white;
-      border: none;
+      padding: 12px 20px;
       border-radius: 6px;
       font-size: 1.2rem;
       cursor: pointer;
       width: 100%;
+      border: none;
     }
 
     button:hover {
@@ -76,24 +113,32 @@
 
     #results {
       text-align: center;
-      padding: 20px;
       background-color: #fff;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-top: 20px;
       max-width: 600px;
       margin: 0 auto;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #555;
-      margin: 10px 0;
+      display: none;
     }
 
     canvas {
-      max-width: 500px;
-      margin: 20px auto;
+      margin-top: 20px;
+    }
+
+    .back-button {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
     }
 
     footer {
@@ -108,14 +153,41 @@
       text-decoration: none;
     }
 
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        padding: 10px 15px;
+      }
+    }
+
   </style>
 </head>
 <body>
 
+  <!-- Sticky Navigation Bar -->
   <header>
     <h1>ChasingStrength 🏋️‍♂️</h1>
     <h2>Nutrition & Calorie Calculator</h2>
   </header>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="workouts.html">Workouts</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <main>
     <section>
@@ -154,14 +226,16 @@
         <button type="button" id="calculate-btn">Calculate</button>
       </form>
 
-      <div id="results" style="display: none;">
+      <div id="results">
         <h3>Your Results:</h3>
         <p id="bmi-result"></p>
         <p id="calories-result"></p>
         <p id="macros-result"></p>
         <p id="fiber-result"></p>
 
-        <canvas id="macronutrient-chart"></canvas> <!-- Graph for Macronutrient Distribution -->
+        <canvas id="macronutrient-chart"></canvas>
+
+        <a href="index.html" class="back-button">Back to Home</a>
       </div>
     </section>
   </main>
@@ -171,6 +245,15 @@
   </footer>
 
   <script>
+    // Add active class to current page link
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(link => link.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
     document.getElementById('calculate-btn').addEventListener('click', function() {
       const weight = parseFloat(document.getElementById('weight').value);
       const height = parseFloat(document.getElementById('height').value) / 100; // Convert to meters
@@ -184,36 +267,30 @@
         return;
       }
 
-      // BMR Calculation (Mifflin-St Jeor Equation)
       let bmr;
       if (gender === 'male') {
-        bmr = 10 * weight + 6.25 * (height * 100) - 5 * age + 5; // height in cm
+        bmr = 10 * weight + 6.25 * (height * 100) - 5 * age + 5; 
       } else {
         bmr = 10 * weight + 6.25 * (height * 100) - 5 * age - 161;
       }
 
-      // TDEE Calculation (BMR * Activity Level)
       const tdee = bmr * activityLevel;
 
-      // Adjust for goal (Lose, Maintain, or Gain)
       let adjustedCalories;
       if (goal === 'lose') {
-        adjustedCalories = tdee - 500; // Deficit
+        adjustedCalories = tdee - 500;
       } else if (goal === 'gain') {
-        adjustedCalories = tdee + 500; // Surplus
+        adjustedCalories = tdee + 500;
       } else {
-        adjustedCalories = tdee; // Maintain
+        adjustedCalories = tdee;
       }
 
-      // Macronutrient Calculation
-      const protein = weight * 2.2; // Protein in grams
-      const fat = adjustedCalories * 0.25 / 9; // Fat in grams (25% of total calories)
-      const carbs = (adjustedCalories - (protein * 4 + fat * 9)) / 4; // Carbs in grams
+      const protein = weight * 2.2;
+      const fat = adjustedCalories * 0.25 / 9;
+      const carbs = (adjustedCalories - (protein * 4 + fat * 9)) / 4;
 
-      // Fiber (recommendation)
-      const fiber = 30; // Recommended daily fiber in grams
+      const fiber = 30;
 
-      // BMI Calculation
       const bmi = weight / (height * height);
       let bmiCategory = '';
       if (bmi < 18.5) {
@@ -226,16 +303,13 @@
         bmiCategory = 'Obesity';
       }
 
-      // Display Results
       document.getElementById('bmi-result').innerText = `Your BMI: ${bmi.toFixed(2)} (${bmiCategory})`;
       document.getElementById('calories-result').innerText = `Daily Calories: ${adjustedCalories.toFixed(0)} kcal`;
       document.getElementById('macros-result').innerText = `Protein: ${protein.toFixed(0)}g | Fat: ${fat.toFixed(0)}g | Carbs: ${carbs.toFixed(0)}g`;
       document.getElementById('fiber-result').innerText = `Recommended Fiber: ${fiber}g`;
 
-      // Show Results Section
       document.getElementById('results').style.display = 'block';
 
-      // Graph: Macronutrient Breakdown
       const ctx = document.getElementById('macronutrient-chart').getContext('2d');
       const macronutrientChart = new Chart(ctx, {
         type: 'pie',
@@ -251,4 +325,5 @@
   </script>
 </body>
 </html>
+
 
