@@ -236,4 +236,19 @@
       document.getElementById('results').style.display = 'block';
 
       // Graph: Macronutrient Breakdown
-      const ctx = document.getElementById
+      const ctx = document.getElementById('macronutrient-chart').getContext('2d');
+      const macronutrientChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Protein', 'Fat', 'Carbs', 'Fiber'],
+          datasets: [{
+            data: [protein, fat, carbs, fiber],
+            backgroundColor: ['#FF5733', '#C70039', '#900C3F', '#DAF7A6'],
+          }]
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
