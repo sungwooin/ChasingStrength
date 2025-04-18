@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nutrition | ChasingStrength 🏋️‍♂️</title>
-  <link rel="stylesheet" href="assets/css/main.css" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nutrition 🥗 | ChasingStrength</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
 
@@ -25,142 +25,87 @@
     </div>
   </header>
 
-  <!-- 🥗 Nutrition Section -->
-  <section class="nutrition container">
-    <div class="nutrition-header">
-      <h2 class="section-title">Nutrition & Meal Plans 🥗</h2>
-      <p>Proper nutrition is the key to transforming your body. Here, you’ll find resources to help you fuel your fitness journey.</p>
-    </div>
+  <!-- 🍽️ Nutrition Overview -->
+  <section class="container">
+    <h2 class="section-title">Smart Nutrition Tips 🍎</h2>
+    <p>Nutrition plays a critical role in transforming your body. Track your intake, eat mindfully, and stay consistent.</p>
+  </section>
 
-    <!-- 🍽️ Meal Plans -->
-    <div class="nutrition-item">
-      <h3>🍽️ Custom Meal Plans</h3>
-      <p>Get personalized meal plans that complement your workout routines and fit your dietary preferences. Whether you're looking to build muscle or lose fat, we’ve got you covered.</p>
-      <a href="coaching.html" class="cta-button">Get Your Meal Plan Now 🔥</a>
-    </div>
+  <!-- 🔢 Calorie Calculator -->
+  <section class="container" id="calorie-calculator">
+    <h2 class="section-title">Calorie Calculator 🧮</h2>
+    <form id="calorieForm">
+      <label for="age">Age (years):</label>
+      <input type="number" id="age" required>
 
-    <!-- 🧮 Calorie Calculator -->
-    <div class="nutrition-item">
-      <h3>🧮 Calorie Calculator</h3>
-      <p>Not sure how many calories you need? Use our free calorie calculator to determine your daily caloric needs based on your goals and activity level.</p>
-      <a href="#calorie-calculator" class="cta-button">Calculate Calories 🔢</a>
-    </div>
+      <label for="gender">Gender:</label>
+      <select id="gender" required>
+        <option value="">Select</option>
+        <option value="male">Male ♂️</option>
+        <option value="female">Female ♀️</option>
+      </select>
 
-    <!-- 🥗 Nutrition Tips -->
-    <div class="nutrition-item">
-      <h3>🥗 Nutrition Tips</h3>
-      <p>Maximize your fitness gains by eating the right foods at the right times. Here are some top nutrition tips to fuel your body for peak performance.</p>
-      <ul>
-        <li>Eat a balanced diet with lean proteins, complex carbs, and healthy fats.</li>
-        <li>Hydrate well and aim for at least 8 cups of water daily.</li>
-        <li>Focus on whole foods—minimize processed options.</li>
-      </ul>
-    </div>
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" required>
 
-    <!-- 🧾 Calorie Calculator Section -->
-    <section id="calorie-calculator" class="calculator-section">
-      <h2 class="section-title">Calorie Calculator 🧾</h2>
-      <p>Use the tool below to calculate your daily calorie needs based on your activity level and fitness goals.</p>
-      
-      <form id="calorieForm">
-        <div class="form-group">
-          <label for="age">Age</label>
-          <input type="number" id="age" required placeholder="Enter your age" />
-        </div>
-        
-        <div class="form-group">
-          <label for="gender">Gender</label>
-          <select id="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </div>
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" required>
 
-        <div class="form-group">
-          <label for="height">Height (cm)</label>
-          <input type="number" id="height" required placeholder="Enter your height in cm" />
-        </div>
+      <label for="activity">Activity Level:</label>
+      <select id="activity" required>
+        <option value="">Select</option>
+        <option value="1.2">Sedentary 🛋️</option>
+        <option value="1.375">Lightly active 🚶</option>
+        <option value="1.55">Moderately active 🏃</option>
+        <option value="1.725">Very active 🏋️‍♀️</option>
+        <option value="1.9">Extra active 🏃‍♂️🏋️</option>
+      </select>
 
-        <div class="form-group">
-          <label for="weight">Weight (kg)</label>
-          <input type="number" id="weight" required placeholder="Enter your weight in kg" />
-        </div>
+      <button type="submit">Calculate 🔍</button>
+    </form>
 
-        <div class="form-group">
-          <label for="activity">Activity Level</label>
-          <select id="activity" required>
-            <option value="sedentary">Sedentary (little to no exercise)</option>
-            <option value="light">Lightly Active (light exercise/sports 1-3 days/week)</option>
-            <option value="moderate">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
-            <option value="active">Very Active (hard exercise/sports 6-7 days/week)</option>
-            <option value="extreme">Extremely Active (very hard exercise/sports and physical job)</option>
-          </select>
-        </div>
-
-        <button type="submit" class="cta-button">Calculate Calories 🔢</button>
-      </form>
-      
-      <div id="calorieResult" class="result-section" style="display: none;">
-        <p>Your daily calorie needs: <span id="calorieValue"></span> calories</p>
-      </div>
-    </section>
+    <div id="result" class="result-box"></div>
   </section>
 
   <!-- 📞 Footer -->
   <footer class="footer">
     <div class="container">
       <p>Made with 💙 by Prince • © 2025 ChasingStrength</p>
+      <p><a href="mailto:chasingstrengthh@gmail.com">📧 chasingstrengthh@gmail.com</a></p>
     </div>
   </footer>
 
   <script>
-    // Calorie Calculator JavaScript Functionality
-    document.getElementById("calorieForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+    document.getElementById('calorieForm').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-      // Get form values
-      const age = parseInt(document.getElementById("age").value);
-      const gender = document.getElementById("gender").value;
-      const height = parseInt(document.getElementById("height").value);
-      const weight = parseInt(document.getElementById("weight").value);
-      const activity = document.getElementById("activity").value;
+      const age = parseInt(document.getElementById('age').value);
+      const gender = document.getElementById('gender').value;
+      const height = parseFloat(document.getElementById('height').value);
+      const weight = parseFloat(document.getElementById('weight').value);
+      const activity = parseFloat(document.getElementById('activity').value);
 
-      // Calculate BMR (Basal Metabolic Rate) using the Mifflin-St Jeor Equation
       let bmr;
 
-      if (gender === "male") {
+      if (gender === 'male') {
         bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-      } else {
+      } else if (gender === 'female') {
         bmr = 10 * weight + 6.25 * height - 5 * age - 161;
       }
 
-      // Adjust BMR for activity level
-      let calorieNeeds;
-      switch (activity) {
-        case "sedentary":
-          calorieNeeds = bmr * 1.2;
-          break;
-        case "light":
-          calorieNeeds = bmr * 1.375;
-          break;
-        case "moderate":
-          calorieNeeds = bmr * 1.55;
-          break;
-        case "active":
-          calorieNeeds = bmr * 1.725;
-          break;
-        case "extreme":
-          calorieNeeds = bmr * 1.9;
-          break;
-      }
+      const maintenanceCalories = bmr * activity;
 
-      // Show the result
-      document.getElementById("calorieResult").style.display = "block";
-      document.getElementById("calorieValue").innerText = Math.round(calorieNeeds);
+      document.getElementById('result').innerHTML = `
+        <h3>🔍 Results:</h3>
+        <p><strong>BMR:</strong> ${Math.round(bmr)} calories/day</p>
+        <p><strong>Maintenance Calories:</strong> ${Math.round(maintenanceCalories)} calories/day</p>
+        <p>To lose weight: ${Math.round(maintenanceCalories - 500)} cal/day</p>
+        <p>To gain weight: ${Math.round(maintenanceCalories + 500)} cal/day</p>
+      `;
     });
   </script>
-
 </body>
 </html>
+
 
 
