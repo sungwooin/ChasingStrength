@@ -1,0 +1,205 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+.sticky-header {
+  background-color: #333;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.sticky-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sticky-header .logo a {
+  font-size: 1.8rem;
+  color: #f5a623;
+  font-weight: bold;
+}
+
+.sticky-header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.sticky-header nav ul li {
+  margin: 0 15px;
+}
+
+.sticky-header nav ul li a {
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.sticky-header nav ul li a.active {
+  color: #f5a623;
+}
+
+/* Hero Section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.hero .headline {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.hero .cta-btn {
+  background-color: #f5a623;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.hero .cta-btn:hover {
+  background-color: #f5b944;
+}
+
+/* About Section */
+.about {
+  padding: 50px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.about p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  line-height: 1.8;
+}
+
+/* Fitness Philosophy Section */
+.fitness-philosophy {
+  padding: 50px 0;
+}
+
+.fitness-philosophy .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fitness-philosophy ul {
+  list-style: none;
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.fitness-philosophy ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Call to Action Section */
+.call-to-action {
+  padding: 60px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.call-to-action .cta-btn {
+  background-color: #f5a623;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+.call-to-action .cta-btn:hover {
+  background-color: #f5b944;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sticky-header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sticky-header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sticky-header nav ul li {
+    margin: 10px 0;
+  }
+
+  .hero .headline {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .fitness-philosophy ul li {
+    font-size: 1rem;
+  }
+
+  .call-to-action .cta-btn {
+    font-size: 1.1rem;
+  }
+}
