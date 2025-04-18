@@ -2,110 +2,198 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nutrition 🥗 | ChasingStrength</title>
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrition & Calorie Calculator - ChasingStrength</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label, input, select {
+      margin: 10px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #results {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #macronutrient-chart {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
 </head>
 <body>
 
-  <!-- 🔝 Navigation -->
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo">ChasingStrength 💪</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home 🏠</a></li>
-          <li><a href="about.html">About 👤</a></li>
-          <li><a href="workouts.html">Workouts 🏃</a></li>
-          <li><a href="nutrition.html" class="active">Nutrition 🥗</a></li>
-          <li><a href="coaching.html">Coaching 🧠</a></li>
-          <li><a href="contact.html">Contact 📞</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <h1>Nutrition & Calorie Calculator</h1>
   </header>
 
-  <!-- 🍽️ Nutrition Overview -->
-  <section class="container">
-    <h2 class="section-title">Smart Nutrition Tips 🍎</h2>
-    <p>Nutrition plays a critical role in transforming your body. Track your intake, eat mindfully, and stay consistent.</p>
-  </section>
+  <main>
+    <section>
+      <h2>Enter Your Details</h2>
+      <form id="calculator-form">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" required />
 
-  <!-- 🔢 Calorie Calculator -->
-  <section class="container" id="calorie-calculator">
-    <h2 class="section-title">Calorie Calculator 🧮</h2>
-    <form id="calorieForm">
-      <label for="age">Age (years):</label>
-      <input type="number" id="age" required>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" required />
 
-      <label for="gender">Gender:</label>
-      <select id="gender" required>
-        <option value="">Select</option>
-        <option value="male">Male ♂️</option>
-        <option value="female">Female ♀️</option>
-      </select>
+        <label for="age">Age (years):</label>
+        <input type="number" id="age" required />
 
-      <label for="height">Height (cm):</label>
-      <input type="number" id="height" required>
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
 
-      <label for="weight">Weight (kg):</label>
-      <input type="number" id="weight" required>
+        <label for="activity">Activity Level:</label>
+        <select id="activity" required>
+          <option value="1.2">Sedentary (little or no exercise)</option>
+          <option value="1.375">Lightly active</option>
+          <option value="1.55">Moderately active</option>
+          <option value="1.725">Very active</option>
+          <option value="1.9">Super active</option>
+        </select>
 
-      <label for="activity">Activity Level:</label>
-      <select id="activity" required>
-        <option value="">Select</option>
-        <option value="1.2">Sedentary 🛋️</option>
-        <option value="1.375">Lightly active 🚶</option>
-        <option value="1.55">Moderately active 🏃</option>
-        <option value="1.725">Very active 🏋️‍♀️</option>
-        <option value="1.9">Extra active 🏃‍♂️🏋️</option>
-      </select>
+        <label for="goal">Goal:</label>
+        <select id="goal" required>
+          <option value="maintain">Maintain weight</option>
+          <option value="lose">Lose weight</option>
+          <option value="gain">Gain muscle</option>
+        </select>
 
-      <button type="submit">Calculate 🔍</button>
-    </form>
+        <button type="button" id="calculate-btn">Calculate</button>
+      </form>
 
-    <div id="result" class="result-box"></div>
-  </section>
+      <div id="results">
+        <h3>Your Results:</h3>
+        <p id="bmi-result"></p>
+        <p id="calories-result"></p>
+        <p id="macros-result"></p>
+        <p id="fiber-result"></p>
 
-  <!-- 📞 Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>Made with 💙 by Prince • © 2025 ChasingStrength</p>
-      <p><a href="mailto:chasingstrengthh@gmail.com">📧 chasingstrengthh@gmail.com</a></p>
-    </div>
+        <canvas id="macronutrient-chart"></canvas> <!-- Graph for Macronutrient Distribution -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ChasingStrength. All rights reserved.</p>
   </footer>
 
   <script>
-    document.getElementById('calorieForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
+    document.getElementById('calculate-btn').addEventListener('click', function() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value) / 100; // Convert to meters
       const age = parseInt(document.getElementById('age').value);
       const gender = document.getElementById('gender').value;
-      const height = parseFloat(document.getElementById('height').value);
-      const weight = parseFloat(document.getElementById('weight').value);
-      const activity = parseFloat(document.getElementById('activity').value);
+      const activityLevel = parseFloat(document.getElementById('activity').value);
+      const goal = document.getElementById('goal').value;
 
-      let bmr;
-
-      if (gender === 'male') {
-        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-      } else if (gender === 'female') {
-        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+      if (!weight || !height || !age || !gender || !activityLevel || !goal) {
+        alert('Please fill in all fields');
+        return;
       }
 
-      const maintenanceCalories = bmr * activity;
+      // BMR Calculation (Mifflin-St Jeor Equation)
+      let bmr;
+      if (gender === 'male') {
+        bmr = 10 * weight + 6.25 * (height * 100) - 5 * age + 5; // height in cm
+      } else {
+        bmr = 10 * weight + 6.25 * (height * 100) - 5 * age - 161;
+      }
 
-      document.getElementById('result').innerHTML = `
-        <h3>🔍 Results:</h3>
-        <p><strong>BMR:</strong> ${Math.round(bmr)} calories/day</p>
-        <p><strong>Maintenance Calories:</strong> ${Math.round(maintenanceCalories)} calories/day</p>
-        <p>To lose weight: ${Math.round(maintenanceCalories - 500)} cal/day</p>
-        <p>To gain weight: ${Math.round(maintenanceCalories + 500)} cal/day</p>
-      `;
+      // TDEE Calculation (BMR * Activity Level)
+      const tdee = bmr * activityLevel;
+
+      // Adjust for goal (Lose, Maintain, or Gain)
+      let adjustedCalories;
+      if (goal === 'lose') {
+        adjustedCalories = tdee - 500; // Deficit
+      } else if (goal === 'gain') {
+        adjustedCalories = tdee + 500; // Surplus
+      } else {
+        adjustedCalories = tdee; // Maintain
+      }
+
+      // Macronutrient Calculation
+      const protein = weight * 2.2; // Protein in grams
+      const fat = adjustedCalories * 0.25 / 9; // Fat in grams (25% of total calories)
+      const carbs = (adjustedCalories - (protein * 4 + fat * 9)) / 4; // Carbs in grams
+
+      // Fiber (recommendation)
+      const fiber = 30; // Recommended daily fiber in grams
+
+      // BMI Calculation
+      const bmi = weight / (height * height);
+      let bmiCategory = '';
+      if (bmi < 18.5) {
+        bmiCategory = 'Underweight';
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        bmiCategory = 'Normal weight';
+      } else if (bmi >= 25 && bmi < 29.9) {
+        bmiCategory = 'Overweight';
+      } else {
+        bmiCategory = 'Obesity';
+      }
+
+      // Display Results
+      document.getElementById('bmi-result').innerText = `Your BMI: ${bmi.toFixed(2)} (${bmiCategory})`;
+      document.getElementById('calories-result').innerText = `Daily Calories: ${adjustedCalories.toFixed(0)} kcal`;
+      document.getElementById('macros-result').innerText = `Protein: ${protein.toFixed(0)}g | Fat: ${fat.toFixed(0)}g | Carbs: ${carbs.toFixed(0)}g`;
+      document.getElementById('fiber-result').innerText = `Recommended Fiber: ${fiber}g`;
+
+      // Graph: Macronutrient Breakdown
+      const ctx = document.getElementById('macronutrient-chart').getContext('2d');
+      const macronutrientChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Protein', 'Fat', 'Carbs', 'Fiber'],
+          datasets: [{
+            data: [protein, fat, carbs, fiber],
+            backgroundColor: ['#FF5733', '#C70039', '#900C3F', '#DAF7A6'],
+          }]
+        }
+      });
     });
   </script>
 </body>
 </html>
-
-
-
