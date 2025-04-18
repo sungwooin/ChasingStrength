@@ -2,73 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Workouts | ChasingStrength</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChasingStrength | Workouts 🏋️‍♂️</title>
   <link rel="stylesheet" href="assets/css/main.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script> <!-- AOS for animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS styles -->
 </head>
 <body>
-  <header>
+  <header class="sticky-header">
     <div class="container">
-      <h1 class="logo"><a href="index.html">ChasingStrength</a></h1>
+      <h1 class="logo"><a href="index.html">ChasingStrength 💪</a></h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="workouts.html" class="active">Workouts</a></li>
-          <li><a href="nutrition.html">Nutrition</a></li>
-          <li><a href="coaching.html">Coaching</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Home 🏠</a></li>
+          <li><a href="workouts.html" class="active">Workouts 🏋️‍♂️</a></li>
+          <li><a href="nutrition.html">Nutrition 🥗</a></li>
+          <li><a href="coaching.html">Coaching 🧑‍🏫</a></li>
+          <li><a href="quiz.html">Quiz 📝</a></li>
+          <li><a href="contact.html">Contact 📞</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero-small">
+  <section class="workouts" data-aos="fade-up">
     <div class="container">
-      <h2>Training That Builds Real Strength</h2>
-      <p>Programs tailored for students and working professionals — no fluff, just results.</p>
-    </div>
-  </section>
-
-  <section class="container section">
-    <h3>Choose Your Goal</h3>
-    <div class="grid">
-      <div class="feature">
-        <h4>💪 Strength Foundation</h4>
-        <p>Beginner-friendly plan to build muscle, improve posture & lift heavy with confidence.</p>
-        <a href="#">Get Plan (PDF)</a>
-      </div>
-      <div class="feature">
-        <h4>🔥 Fat to Fit (Recomp)</h4>
-        <p>Lose fat, gain lean muscle, and start seeing real definition in 8-12 weeks.</p>
-        <a href="#">Download Plan</a>
-      </div>
-      <div class="feature">
-        <h4>🏃‍♂️ Athletic Performance</h4>
-        <p>Boost endurance, agility & strength — perfect for sports players and hustlers.</p>
-        <a href="#">Explore Program</a>
+      <h2 class="section-header">Our Workout Plans 💪</h2>
+      <p>Get personalized workouts tailored to your goals. Whether you’re aiming to build strength, increase endurance, or burn fat, our plans are designed to help you succeed.</p>
+      <div class="workout-cards">
+        <div class="workout-card">
+          <h3>Strength Training 🏋️‍♂️</h3>
+          <p>Build muscle and increase your strength with structured, progressive workouts. <strong>₹500</strong></p>
+          <a href="coaching.html" class="cta-btn">Get Started 🚀</a>
+        </div>
+        <div class="workout-card">
+          <h3>Endurance Training 💨</h3>
+          <p>Boost your stamina with dynamic cardio exercises and high-intensity interval training (HIIT). <strong>₹400</strong></p>
+          <a href="coaching.html" class="cta-btn">Get Started 🚀</a>
+        </div>
+        <div class="workout-card">
+          <h3>Body Recomposition 🏃‍♂️</h3>
+          <p>Lose fat and build muscle with a balanced approach to training and nutrition. <strong>₹600</strong></p>
+          <a href="coaching.html" class="cta-btn">Get Started 🚀</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="container section">
-    <h3>Why These Plans Work</h3>
-    <p>I’ve tested every plan myself — starting from being skinny, clueless, and weak. These are structured to build discipline, not just a better body. You get:</p>
-    <ul>
-      <li>✅ Progressive overload & smart splits</li>
-      <li>✅ Recovery days built-in</li>
-      <li>✅ Clear instructions & no gym intimidation</li>
-    </ul>
-  </section>
-
-  <section class="container section">
-    <h3>Still Confused?</h3>
-    <p>I got you. If you’re unsure what to follow, just head over to <a href="coaching.html">Coaching</a> and I’ll personally guide you based on your lifestyle and fitness goals.</p>
-  </section>
-
-  <footer>
+  <footer style="background-color: #222; color: #fff;">
     <div class="container">
       <p>&copy; 2025 ChasingStrength — Built by Prince. All rights reserved.</p>
     </div>
   </footer>
+  
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
+
